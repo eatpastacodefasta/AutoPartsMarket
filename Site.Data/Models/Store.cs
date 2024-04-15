@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Site.Data.Models;
 
-public class RetailStore
+public class Store
 {
     public int Id { get; set; }
     public string? Name { get; set; }

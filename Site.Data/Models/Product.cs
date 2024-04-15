@@ -13,4 +13,5 @@ public class Product
     public string? Category { get; set; }
     public string? Make { get; set; }
     public decimal? Price { get; set; }
+    public ICollection<Supplier>? Suppliers { get; set; }
 }
