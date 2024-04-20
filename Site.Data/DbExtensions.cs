@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace Site.Data
 {
-    public static class Extensions
+    public static class DbExtensions
     {
         public static void CreateDbIfNotExists(this IHost host)
         {

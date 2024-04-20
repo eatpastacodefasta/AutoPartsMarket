@@ -6,7 +6,7 @@ namespace Site.Data.Models;
 public class Product
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int Id { get; set; }
 
     public string? Name { get; set; }

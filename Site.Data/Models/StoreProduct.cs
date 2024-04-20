@@ -4,10 +4,10 @@ namespace Site.Data.Models;
 
 public class StoreProduct
 {
-    public int StoreID { get; set; }
+    public int StoreId { get; set; }
     public Store? Store { get; set; }
 
-    public int ProductID { get; set; }
+    public int ProductId { get; set; }
     public Product? Product { get; set; }
 
     public int AvailableStock { get; set; }

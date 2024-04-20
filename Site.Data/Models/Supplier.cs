@@ -6,8 +6,10 @@ namespace Site.Data.Models;
 public class Supplier
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int Id { get; set; }
+
+    public string? Company { get; set; }
 
     [Display(Name = "First Name")]
     public string? FirstName { get; set; }

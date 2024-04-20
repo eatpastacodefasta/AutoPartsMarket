@@ -15,6 +15,8 @@ namespace Site.Data
         public DbSet<Supply> Supplies { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Stock> Stock { get; set; }
+        public DbSet<SupplierProduct> SupplierProducts { get; set; }
+        public DbSet<StoreProduct> StoreProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,8 +27,8 @@ namespace Site.Data
             modelBuilder.Entity<Order>().ToTable("Orders");
             modelBuilder.Entity<Stock>().ToTable("Stock");
 
-            modelBuilder.Entity<SupplierProduct>().HasKey(m => new { m.SupplierID, m.ProductID });
-            modelBuilder.Entity<StoreProduct>().HasKey(m => new { m.StoreID, m.ProductID });
+            modelBuilder.Entity<SupplierProduct>().ToTable("SupplierProducts").HasKey(m => new { m.SupplierId, m.ProductId });
+            modelBuilder.Entity<StoreProduct>().ToTable("StoreProducts").HasKey(m => new { m.StoreId, m.ProductId });
         }
     }
 }
