@@ -23,7 +23,7 @@ namespace Site.Data
             modelBuilder.Entity<Product>().ToTable("Products");
             modelBuilder.Entity<Store>().ToTable("Stores");
             modelBuilder.Entity<Supplier>().ToTable("Suppliers");
-            modelBuilder.Entity<Supply>().ToTable("Supplies");
+            modelBuilder.Entity<Supply>().ToTable("Supplies").HasKey(m => new { m.Id, m.StoreId, m.ProductId });
             modelBuilder.Entity<Order>().ToTable("Orders");
             modelBuilder.Entity<Stock>().ToTable("Stock");
 

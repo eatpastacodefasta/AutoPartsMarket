@@ -178,6 +178,46 @@ public class DbInitializer
         {
             context.SupplierProducts.Add(s);
         }
+
+        var storeProducts = new StoreProduct[]
+        {
+            new StoreProduct { StoreId = 7028, ProductId = 3728, AvailableStock = 20, MinimumStock = 10, SalesCount = 5 },
+            new StoreProduct { StoreId = 7028, ProductId = 9193, AvailableStock = 15, MinimumStock = 8, SalesCount = 3 },
+            new StoreProduct { StoreId = 7028, ProductId = 5467, AvailableStock = 10, MinimumStock = 5, SalesCount = 2 },
+            new StoreProduct { StoreId = 8374, ProductId = 2085, AvailableStock = 25, MinimumStock = 15, SalesCount = 8 },
+            new StoreProduct { StoreId = 8374, ProductId = 6319, AvailableStock = 30, MinimumStock = 20, SalesCount = 10 },
+            new StoreProduct { StoreId = 8374, ProductId = 7542, AvailableStock = 18, MinimumStock = 10, SalesCount = 6 },
+            new StoreProduct { StoreId = 2946, ProductId = 4281, AvailableStock = 22, MinimumStock = 12, SalesCount = 7 },
+            new StoreProduct { StoreId = 2946, ProductId = 1650, AvailableStock = 12, MinimumStock = 8, SalesCount = 4 },
+            new StoreProduct { StoreId = 2946, ProductId = 8024, AvailableStock = 8, MinimumStock = 5, SalesCount = 3 },
+            new StoreProduct { StoreId = 5063, ProductId = 3796, AvailableStock = 14, MinimumStock = 10, SalesCount = 5 },
+            new StoreProduct { StoreId = 5063, ProductId = 5830, AvailableStock = 16, MinimumStock = 12, SalesCount = 6 },
+            new StoreProduct { StoreId = 5063, ProductId = 2674, AvailableStock = 10, MinimumStock = 7, SalesCount = 3 },
+            new StoreProduct { StoreId = 6198, ProductId = 9147, AvailableStock = 20, MinimumStock = 15, SalesCount = 7 },
+            new StoreProduct { StoreId = 6198, ProductId = 7358, AvailableStock = 25, MinimumStock = 18, SalesCount = 9 },
+            new StoreProduct { StoreId = 6198, ProductId = 6129, AvailableStock = 18, MinimumStock = 12, SalesCount = 6 },
+            new StoreProduct { StoreId = 2457, ProductId = 4906, AvailableStock = 30, MinimumStock = 20, SalesCount = 10 },
+            new StoreProduct { StoreId = 2457, ProductId = 3487, AvailableStock = 25, MinimumStock = 18, SalesCount = 8 },
+            new StoreProduct { StoreId = 2457, ProductId = 8012, AvailableStock = 20, MinimumStock = 15, SalesCount = 6 },
+            new StoreProduct { StoreId = 3701, ProductId = 5493, AvailableStock = 10, MinimumStock = 5, SalesCount = 3 },
+            new StoreProduct { StoreId = 3701, ProductId = 1729, AvailableStock = 8, MinimumStock = 4, SalesCount = 2 },
+            new StoreProduct { StoreId = 3701, ProductId = 6952, AvailableStock = 5, MinimumStock = 3, SalesCount = 1 },
+            new StoreProduct { StoreId = 8546, ProductId = 8304, AvailableStock = 15, MinimumStock = 10, SalesCount = 5 },
+            new StoreProduct { StoreId = 8546, ProductId = 2076, AvailableStock = 18, MinimumStock = 12, SalesCount = 6 },
+            new StoreProduct { StoreId = 8546, ProductId = 4159, AvailableStock = 12, MinimumStock = 8, SalesCount = 4 },
+            new StoreProduct { StoreId = 9260, ProductId = 9831, AvailableStock = 20, MinimumStock = 15, SalesCount = 7 },
+            new StoreProduct { StoreId = 9260, ProductId = 6384, AvailableStock = 25, MinimumStock = 18, SalesCount = 9 },
+            new StoreProduct { StoreId = 9260, ProductId = 4012, AvailableStock = 18, MinimumStock = 12, SalesCount = 6 },
+            new StoreProduct { StoreId = 4310, ProductId = 5706, AvailableStock = 30, MinimumStock = 20, SalesCount = 10 },
+            new StoreProduct { StoreId = 4310, ProductId = 1267, AvailableStock = 25, MinimumStock = 18, SalesCount = 8 },
+            new StoreProduct { StoreId = 4310, ProductId = 7490, AvailableStock = 20, MinimumStock = 15, SalesCount = 6 }
+        };
+
+        foreach (StoreProduct s in storeProducts)
+        {
+            context.StoreProducts.Add(s);
+        }
+
         context.SaveChanges();
     }
 }

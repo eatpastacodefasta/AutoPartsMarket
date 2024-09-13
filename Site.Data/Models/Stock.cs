@@ -6,7 +6,6 @@ namespace Site.Data.Models;
 public class Stock
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     public int ProductId { get; set; }

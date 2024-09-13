@@ -20,4 +20,5 @@ public class Product
     public decimal? Price { get; set; }
 
     public ICollection<SupplierProduct>? SupplierProducts { get; set; }
+    public ICollection<StoreProduct>? StoreProducts { get; set; }
 }

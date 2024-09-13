@@ -6,7 +6,6 @@ namespace Site.Data.Models;
 public class Order
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     public Guid? Code { get; set; }

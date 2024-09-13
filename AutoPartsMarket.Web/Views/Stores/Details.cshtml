@@ -1,0 +1,52 @@
+﻿@model Site.Data.Models.Store
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2><i class="bi bi-basket"></i> @Html.DisplayFor(model => model.Name)</h2>
+
+@* <dd class="col-sm-10">
+    @Html.DisplayFor(model => model.Name)
+</dd>
+<dt class="col-sm-2">
+    Product Catalog
+</dt> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Make</th>
+            <th>Stock</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StoreProducts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvailableStock)
+                </td>
+                <td>
+                    &euro;@Html.DisplayFor(modelItem => item.Product.Price)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-4">
+    <a asp-action="Index">Back to List</a>
+</div>
+
