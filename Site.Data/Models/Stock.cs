@@ -14,4 +14,6 @@ public class Stock
     public int AvailableStock { get; set; }
 
     public int MinimumStock { get; set; }
+
+    public ICollection<SupplierProduct>? SupplierProducts { get; set; }
 }

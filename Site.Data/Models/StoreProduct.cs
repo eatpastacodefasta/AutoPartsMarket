@@ -15,4 +15,5 @@ public class StoreProduct
     public int MinimumStock { get; set; }
 
     public int SalesCount { get; set; }
+    public int TodaysSalesCount { get; set; }
 }

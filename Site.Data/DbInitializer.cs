@@ -181,41 +181,81 @@ public class DbInitializer
 
         var storeProducts = new StoreProduct[]
         {
-            new StoreProduct { StoreId = 7028, ProductId = 3728, AvailableStock = 20, MinimumStock = 10, SalesCount = 5 },
-            new StoreProduct { StoreId = 7028, ProductId = 9193, AvailableStock = 15, MinimumStock = 8, SalesCount = 3 },
-            new StoreProduct { StoreId = 7028, ProductId = 5467, AvailableStock = 10, MinimumStock = 5, SalesCount = 2 },
-            new StoreProduct { StoreId = 8374, ProductId = 2085, AvailableStock = 25, MinimumStock = 15, SalesCount = 8 },
-            new StoreProduct { StoreId = 8374, ProductId = 6319, AvailableStock = 30, MinimumStock = 20, SalesCount = 10 },
-            new StoreProduct { StoreId = 8374, ProductId = 7542, AvailableStock = 18, MinimumStock = 10, SalesCount = 6 },
-            new StoreProduct { StoreId = 2946, ProductId = 4281, AvailableStock = 22, MinimumStock = 12, SalesCount = 7 },
-            new StoreProduct { StoreId = 2946, ProductId = 1650, AvailableStock = 12, MinimumStock = 8, SalesCount = 4 },
-            new StoreProduct { StoreId = 2946, ProductId = 8024, AvailableStock = 8, MinimumStock = 5, SalesCount = 3 },
-            new StoreProduct { StoreId = 5063, ProductId = 3796, AvailableStock = 14, MinimumStock = 10, SalesCount = 5 },
-            new StoreProduct { StoreId = 5063, ProductId = 5830, AvailableStock = 16, MinimumStock = 12, SalesCount = 6 },
-            new StoreProduct { StoreId = 5063, ProductId = 2674, AvailableStock = 10, MinimumStock = 7, SalesCount = 3 },
-            new StoreProduct { StoreId = 6198, ProductId = 9147, AvailableStock = 20, MinimumStock = 15, SalesCount = 7 },
-            new StoreProduct { StoreId = 6198, ProductId = 7358, AvailableStock = 25, MinimumStock = 18, SalesCount = 9 },
-            new StoreProduct { StoreId = 6198, ProductId = 6129, AvailableStock = 18, MinimumStock = 12, SalesCount = 6 },
-            new StoreProduct { StoreId = 2457, ProductId = 4906, AvailableStock = 30, MinimumStock = 20, SalesCount = 10 },
-            new StoreProduct { StoreId = 2457, ProductId = 3487, AvailableStock = 25, MinimumStock = 18, SalesCount = 8 },
-            new StoreProduct { StoreId = 2457, ProductId = 8012, AvailableStock = 20, MinimumStock = 15, SalesCount = 6 },
-            new StoreProduct { StoreId = 3701, ProductId = 5493, AvailableStock = 10, MinimumStock = 5, SalesCount = 3 },
-            new StoreProduct { StoreId = 3701, ProductId = 1729, AvailableStock = 8, MinimumStock = 4, SalesCount = 2 },
-            new StoreProduct { StoreId = 3701, ProductId = 6952, AvailableStock = 5, MinimumStock = 3, SalesCount = 1 },
-            new StoreProduct { StoreId = 8546, ProductId = 8304, AvailableStock = 15, MinimumStock = 10, SalesCount = 5 },
-            new StoreProduct { StoreId = 8546, ProductId = 2076, AvailableStock = 18, MinimumStock = 12, SalesCount = 6 },
-            new StoreProduct { StoreId = 8546, ProductId = 4159, AvailableStock = 12, MinimumStock = 8, SalesCount = 4 },
-            new StoreProduct { StoreId = 9260, ProductId = 9831, AvailableStock = 20, MinimumStock = 15, SalesCount = 7 },
-            new StoreProduct { StoreId = 9260, ProductId = 6384, AvailableStock = 25, MinimumStock = 18, SalesCount = 9 },
-            new StoreProduct { StoreId = 9260, ProductId = 4012, AvailableStock = 18, MinimumStock = 12, SalesCount = 6 },
-            new StoreProduct { StoreId = 4310, ProductId = 5706, AvailableStock = 30, MinimumStock = 20, SalesCount = 10 },
-            new StoreProduct { StoreId = 4310, ProductId = 1267, AvailableStock = 25, MinimumStock = 18, SalesCount = 8 },
-            new StoreProduct { StoreId = 4310, ProductId = 7490, AvailableStock = 20, MinimumStock = 15, SalesCount = 6 }
+            new StoreProduct { StoreId = 7028, ProductId = 3728, AvailableStock = 20, MinimumStock = 10, SalesCount = 5, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 7028, ProductId = 9193, AvailableStock = 15, MinimumStock = 8, SalesCount = 3, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 7028, ProductId = 5467, AvailableStock = 10, MinimumStock = 5, SalesCount = 2, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 8374, ProductId = 2085, AvailableStock = 25, MinimumStock = 15, SalesCount = 8, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 8374, ProductId = 6319, AvailableStock = 30, MinimumStock = 20, SalesCount = 10, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 8374, ProductId = 7542, AvailableStock = 18, MinimumStock = 10, SalesCount = 6, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 2946, ProductId = 4281, AvailableStock = 22, MinimumStock = 12, SalesCount = 7, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 2946, ProductId = 1650, AvailableStock = 12, MinimumStock = 8, SalesCount = 4, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 2946, ProductId = 8024, AvailableStock = 8, MinimumStock = 5, SalesCount = 3, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 5063, ProductId = 3796, AvailableStock = 14, MinimumStock = 10, SalesCount = 5, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 5063, ProductId = 5830, AvailableStock = 16, MinimumStock = 12, SalesCount = 6, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 5063, ProductId = 2674, AvailableStock = 10, MinimumStock = 7, SalesCount = 3, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 6198, ProductId = 9147, AvailableStock = 20, MinimumStock = 15, SalesCount = 7, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 6198, ProductId = 7358, AvailableStock = 25, MinimumStock = 18, SalesCount = 9, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 6198, ProductId = 6129, AvailableStock = 18, MinimumStock = 12, SalesCount = 6, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 2457, ProductId = 4906, AvailableStock = 30, MinimumStock = 20, SalesCount = 10, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 2457, ProductId = 3487, AvailableStock = 25, MinimumStock = 18, SalesCount = 8, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 2457, ProductId = 8012, AvailableStock = 20, MinimumStock = 15, SalesCount = 6, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 3701, ProductId = 5493, AvailableStock = 10, MinimumStock = 5, SalesCount = 3, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 3701, ProductId = 1729, AvailableStock = 8, MinimumStock = 4, SalesCount = 2, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 3701, ProductId = 6952, AvailableStock = 5, MinimumStock = 3, SalesCount = 1, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 8546, ProductId = 8304, AvailableStock = 15, MinimumStock = 10, SalesCount = 5, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 8546, ProductId = 2076, AvailableStock = 18, MinimumStock = 12, SalesCount = 6, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 8546, ProductId = 4159, AvailableStock = 12, MinimumStock = 8, SalesCount = 4, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 9260, ProductId = 9831, AvailableStock = 20, MinimumStock = 15, SalesCount = 7, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 9260, ProductId = 6384, AvailableStock = 25, MinimumStock = 18, SalesCount = 9, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 9260, ProductId = 4012, AvailableStock = 18, MinimumStock = 12, SalesCount = 6, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 4310, ProductId = 5706, AvailableStock = 30, MinimumStock = 20, SalesCount = 10, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 4310, ProductId = 1267, AvailableStock = 25, MinimumStock = 18, SalesCount = 8, TodaysSalesCount = 0 },
+            new StoreProduct { StoreId = 4310, ProductId = 7490, AvailableStock = 20, MinimumStock = 15, SalesCount = 6, TodaysSalesCount = 0 }
         };
 
         foreach (StoreProduct s in storeProducts)
         {
             context.StoreProducts.Add(s);
+        }
+
+        var stock = new Stock[]
+        {
+            new Stock { Id = 5289, ProductId = products[0].Id, AvailableStock = 24, MinimumStock = 8 },
+            new Stock { Id = 8223, ProductId = products[1].Id, AvailableStock = 45, MinimumStock = 15 },
+            new Stock { Id = 1113, ProductId = products[2].Id, AvailableStock = 36, MinimumStock = 12 },
+            new Stock { Id = 9472, ProductId = products[3].Id, AvailableStock = 30, MinimumStock = 10 },
+            new Stock { Id = 6784, ProductId = products[4].Id, AvailableStock = 21, MinimumStock = 7 },
+            new Stock { Id = 4832, ProductId = products[5].Id, AvailableStock = 42, MinimumStock = 14 },
+            new Stock { Id = 2901, ProductId = products[6].Id, AvailableStock = 27, MinimumStock = 9 },
+            new Stock { Id = 8715, ProductId = products[7].Id, AvailableStock = 48, MinimumStock = 16 },
+            new Stock { Id = 6321, ProductId = products[8].Id, AvailableStock = 18, MinimumStock = 6 },
+            new Stock { Id = 4519, ProductId = products[9].Id, AvailableStock = 33, MinimumStock = 11 },
+            new Stock { Id = 1298, ProductId = products[10].Id, AvailableStock = 39, MinimumStock = 13 },
+            new Stock { Id = 7740, ProductId = products[11].Id, AvailableStock = 15, MinimumStock = 5 },
+            new Stock { Id = 3882, ProductId = products[12].Id, AvailableStock = 54, MinimumStock = 18 },
+            new Stock { Id = 2190, ProductId = products[13].Id, AvailableStock = 21, MinimumStock = 7 },
+            new Stock { Id = 6023, ProductId = products[14].Id, AvailableStock = 60, MinimumStock = 20 },
+            new Stock { Id = 9241, ProductId = products[15].Id, AvailableStock = 30, MinimumStock = 10 },
+            new Stock { Id = 3987, ProductId = products[16].Id, AvailableStock = 36, MinimumStock = 12 },
+            new Stock { Id = 8476, ProductId = products[17].Id, AvailableStock = 42, MinimumStock = 14 },
+            new Stock { Id = 1503, ProductId = products[18].Id, AvailableStock = 24, MinimumStock = 8 },
+            new Stock { Id = 7159, ProductId = products[19].Id, AvailableStock = 51, MinimumStock = 17 },
+            new Stock { Id = 6642, ProductId = products[20].Id, AvailableStock = 39, MinimumStock = 13 },
+            new Stock { Id = 2349, ProductId = products[21].Id, AvailableStock = 27, MinimumStock = 9 },
+            new Stock { Id = 8921, ProductId = products[22].Id, AvailableStock = 45, MinimumStock = 15 },
+            new Stock { Id = 3718, ProductId = products[23].Id, AvailableStock = 18, MinimumStock = 6 },
+            new Stock { Id = 5093, ProductId = products[24].Id, AvailableStock = 57, MinimumStock = 19 },
+            new Stock { Id = 6814, ProductId = products[25].Id, AvailableStock = 48, MinimumStock = 16 },
+            new Stock { Id = 1407, ProductId = products[26].Id, AvailableStock = 15, MinimumStock = 5 },
+            new Stock { Id = 7591, ProductId = products[27].Id, AvailableStock = 21, MinimumStock = 7 },
+            new Stock { Id = 4463, ProductId = products[28].Id, AvailableStock = 33, MinimumStock = 11 },
+            new Stock { Id = 9928, ProductId = products[29].Id, AvailableStock = 24, MinimumStock = 8 }
+        };
+
+
+        foreach (Stock s in stock)
+        {
+            context.Stock.Add(s);
         }
 
         context.SaveChanges();

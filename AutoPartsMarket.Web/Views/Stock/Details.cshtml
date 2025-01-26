@@ -1,0 +1,125 @@
+﻿@model Site.Data.Models.Stock
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@Html.DisplayFor(model => model.Product.Name) Stock</h1>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-white px-0">
+        <li class="breadcrumb-item">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-area="" asp-controller="Stock" asp-action="Index">Stock</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+            @Html.DisplayFor(x => x.Product.Name)
+        </li>
+    </ol>
+</nav>
+<hr>
+<h4 class="mb-3">Details</h4>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.LabelFor(x => x.Product.Name)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x => x.Product.Name)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(x => x.Product.Category)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x => x.Product.Category)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(x => x.Product.Make)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x => x.Product.Make)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(x => x.AvailableStock)
+    </dt>
+    @if (Model.AvailableStock < Model.MinimumStock)
+    {
+        <dd class="col-sm-10 text-danger">
+            @Html.DisplayFor(x => x.AvailableStock)
+        </dd>
+    }
+    else
+    {
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.AvailableStock)
+        </dd>
+    }
+    <dt class="col-sm-2">
+        @Html.LabelFor(x => x.MinimumStock)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x => x.MinimumStock)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.LabelFor(x => x.Product.Price)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(x => x.Product.Price)
+    </dd>
+</dl>
+@if (Model.MinimumStock > Model.AvailableStock)
+{
+    <form asp-action="Restock">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" class="btn btn-success mb-5 mr-2" value="Auto Restock" />
+    </form>
+}
+else
+{
+    <button type="button" class="btn btn-success mb-5 mr-2" disabled asp-action="AutoOrder" asp-route-productId="@Model.ProductId">Auto Restock</button>
+}
+<h4 class="mb-3">Supplier Catalog</h4>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Company</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Telephone</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SupplierProducts.OrderBy(x => x.SupplierPrice))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Telephone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierPrice)
+                </td>
+                <td>
+                    <a asp-controller="Suppliers" asp-action="Order" asp-route-productId="@item.ProductId" asp-route-supplierId="@item.Supplier.Id">Order</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="mt-4">
+    <a asp-action="Index">Back to List</a>
+</div>

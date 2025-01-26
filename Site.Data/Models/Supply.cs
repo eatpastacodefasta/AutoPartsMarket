@@ -8,6 +8,8 @@ public class Supply
     [Key]
     public int Id { get; set; }
 
+    [Required]
+    [Range(1, int.MaxValue, ErrorMessage = "Quantity should be a positive number.")]
     public int Quantity { get; set; }
 
     public Guid? Code { get; set; }

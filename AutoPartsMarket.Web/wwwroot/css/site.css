@@ -20,3 +20,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+a {
+    color: #1200ff;
+}
+
+a:hover {
+    color: #5a54a9;
+}

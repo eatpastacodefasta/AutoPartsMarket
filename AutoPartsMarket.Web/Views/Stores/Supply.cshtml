@@ -1,0 +1,53 @@
+﻿@model Site.Data.Models.Supply
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Supply Store</h1>
+<p>Supplying <strong>@Model.Store.Name</strong> store with <strong>@Model.Product.Name</strong> product. </p>
+<hr>
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error:</strong> @TempData["ErrorMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<h4 class="mb-3">Details</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Supply">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="StoreId" />
+            <input type="hidden" asp-for="ProductId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label> <span class="text-danger">*</span>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <p>Fields marked with '<span class="text-danger">*</span>' are required.</p>
+            </div>
+            <div class="form-group mt-2">
+                <div class="d-flex flex-row">
+                    <div class="pr-1">
+                        <a class="btn btn-outline-dark" asp-action="Details" asp-route-id="@Model.StoreId">Cancel</a>
+                    </div>
+                    <div class="pl-1">
+                        <input type="submit" value="Supply" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

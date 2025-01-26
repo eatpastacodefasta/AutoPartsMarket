@@ -1,0 +1,61 @@
+﻿@model Site.Data.Models.Supplier
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Supplier</h1>
+<p>Editing <strong>@Model.Company</strong> supplier. </p>
+<hr>
+<h4 class="mb-3">Details</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-2">
+                <label asp-for="Company" class="control-label"></label> <span class="text-danger">*</span>
+                <input asp-for="Company" class="form-control" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label> <span class="text-danger">*</span>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="LastName" class="control-label"></label> <span class="text-danger">*</span>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">s
+                <label asp-for="Telephone" class="control-label"></label> <span class="text-danger">*</span>
+                <input asp-for="Telephone" class="form-control" />
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Address" class="control-label"></label> <span class="text-danger">*</span>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <p>Fields marked with '<span class="text-danger">*</span>' are required.</p>
+            </div>
+            <div class="form-group mt-2">
+                <div class="d-flex flex-row">
+                    <div class="pr-1">
+                        <a class="btn btn-outline-dark" asp-action="Details" asp-route-id="@Model.Id">Cancel</a>
+                    </div>
+                    <div class="pl-1">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
